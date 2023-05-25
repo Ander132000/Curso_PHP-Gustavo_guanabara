@@ -10,9 +10,9 @@
 <body>
     <?php 
         $valor1 = $_GET['v1'] ?? '';
-        $peso1 = $_GET['p1'] ?? '';
+        $peso1 = $_GET['p1'] ?? 1;
         $valor2 = $_GET['v2'] ?? '';
-        $peso2 = $_GET['p2'] ?? '';
+        $peso2 = $_GET['p2'] ?? 1;
     ?>
     <main>
         <h1>Média Aritmética</h1>
@@ -31,8 +31,8 @@
 
     <section>
             <?php 
-                $ma = ($valor1 + $valor2) / 2;
-                $mp = ($valor1 * $peso1 + $valor2 * $peso2)/($peso1 + $peso2);
+                $ma = ((int)$valor1 + (int)$valor2) / 2;
+                $mp = ( (int)$valor1 * (int)$peso1 + (int)$valor2 * (int)$peso2)/((int)$peso1 + (int)$peso2);
             ?>
     
             <h2>Cálculos das Médias</h2>

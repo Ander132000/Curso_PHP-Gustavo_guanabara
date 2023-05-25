@@ -11,10 +11,10 @@
     <main>
         <?php 
             $in = $_GET['in'] ?? '';
-            $cem = intdiv($in,100);
-            $cinquenta = intdiv(($in % 100),  50);
-            $dez       = intdiv(($in % 100) % 50 , 10);
-            $cinco     = ($in % 100) % 10 / 5;
+            $cem = intdiv((int)$in,100);
+            $cinquenta = intdiv(((int)$in % 100),  50);
+            $dez       = intdiv(((int)$in % 100) % 50 , 10);
+            $cinco     = ((int)$in % 100) % 10 / 5;
         ?>
         <h2>Caixa Eletrônico</h2>
         <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
@@ -26,7 +26,7 @@
     </main>
     
     <section>
-        <h2>Saque de R$<?=number_format($in,2,",",".")?> realizado</h2>
+        <h2>Saque de R$<?=number_format((int)$in,2,",",".")?> realizado</h2>
         <p>O caixa Eletrônico vai te entregar as seguintes notas: </p>
         <ul>
             <li><img src="./Imagens/100reis.jpg" alt="" width="150">X<?=$cem?></li>
